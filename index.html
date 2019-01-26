@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#2196f3">
+    <title>Retrospective</title>
+    <link rel="stylesheet" href="lib/framework7/css/framework7.min.css">
+    <link href="css/style.css">
+</head>
+<body class="color-theme-green">
+    <div id="app">
+        <div class="statusbar"></div>
+        <div class="view view-main">
+            <div data-name="home" class="page">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                    <div class="title">Retrospective</div>
+                    </div>
+                </div>
+                <div class="toolbar">
+                    <div class="toolbar-inner">
+                    <a class="link" onclick="sendEmail()">send Results</a>
+                    <a href="/aboutScrum/" class="link">about Scrum</a>
+                    </div>
+                </div>
+                <div class="page-content">
+                    <div class="block-title">Add some Retrospective information</div>
+                        <div class="list accordion-list">
+                          <ul>
+                            <li class="accordion-item"><a href="#" class="item-content item-link">
+                                <div class="item-inner">
+                                  <div class="item-title">Results</div>
+                                </div></a>
+                              <div class="accordion-item-content">
+                                <div class="block">
+                                  <br>
+                                  <button onclick="cameraStart()">add picture</button>
+                                  <br>
+                                  <br>
+                                  <img src="" alt="No picture added!" height="460" width="300" id="retroImage"> <!--src="bild.jpg"-->
+                                  <br>
+                                  <br>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="accordion-item"><a href="#" class="item-content item-link">
+                                <div class="item-inner">
+                                  <div class="item-title">Date</div>
+                                </div></a>
+                              <div class="accordion-item-content">
+                                <div class="block">
+                                    <br>
+                                    add retro date:
+                                    <input type="text" placeholder="select here" readonly="readonly" id="retroDate"/>
+                                    <br>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="accordion-item"><a href="#" class="item-content item-link">
+                                <div class="item-inner">
+                                  <div class="item-title">Location</div>
+                                </div></a>
+                              <div class="accordion-item-content">
+                                <div class="block">
+                                    <br>
+                                    <button onclick="getGeolocation()">add geolocation</button>
+                                    added geolocation: <input id="geolocation" placeholder="none" type="text" readonly="readonly">
+                                    <br>
+                                    add city: <input id ="city">
+                                    <br>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="accordion-item"><a href="#" class="item-content item-link">
+                                <div class="item-inner">
+                                  <div class="item-title">Members</div>
+                                </div></a>
+                              <div class="accordion-item-content">
+                                <div class="block">
+                                  <br>
+                                      <!-- <button>add members from contacts</button> -->
+                                       email addresses of the team members:
+                                      <textarea rows="3" id="emailAdresses">m-martel@gmx.de; m.martel@freenet.de;</textarea>
+                                  <br>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="accordion-item"><a href="#" class="item-content item-link">
+                              <div class="item-inner">
+                                 <div class="item-title">ToDos</div>
+                               </div></a>
+                             <div class="accordion-item-content">
+                               <div class="block">
+                                   <br>
+                                       add toDo's: 
+                                       <textarea id="notes"></textarea>
+                                 <!-- <br> -->
+                               </div>
+                             </div>
+                           </li>
+                           <li class="accordion-item"><a href="#" class="item-content item-link">
+                               <div class="item-inner">
+                                  <div class="item-title">Reminder</div>
+                                </div></a>
+                              <div class="accordion-item-content">
+                                <div class="block">
+                                    <br>
+                                        add reminder date:
+                                        <input type="text" placeholder="select here" readonly="readonly" id="reminderDate"/>
+                                        <br>
+                                        <button onclick="addReminder()">add reminder in calendar</button>
+                                  <br>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script src="node_modules/image-to-base64/image-to-base64.min.js"></script>
+</body>
+</html>
